@@ -239,6 +239,11 @@
         CGContextSetLineWidth(context, GTLineWidth);
         
         CGContextDrawPath(context, kCGPathStroke);
+        
+        CGContextAddEllipseInRect(context, CGRectMake(GTLineWidth, GTLineWidth, cRadius-GTLineWidth*2, cRadius-GTLineWidth*2));
+        [cColor setStroke];
+        [[UIColor whiteColor] set];
+        CGContextDrawPath(context, kCGPathFillStroke);
     }
     
     if(fRadius>0){
